@@ -112,6 +112,9 @@ public class Allievo {
 	@ManyToMany(mappedBy = "allievi", fetch = FetchType.LAZY)
 	private List<Corso> corsi;
 	
+	//La strategia di fetch EAGER mi permette di caricare subito la società di cui fa parte l'allievo
+	//appena caricato. Il PERSIST nella strategia di cascade mi permette di rendere persistente la società quando
+	//rendo persistente l'allievo
 	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
 	private Societa societa;
 }

@@ -72,6 +72,8 @@ public class Corso {
 			return sb.toString();
 		}
 		
+		//La strategia di fetch adatta è LAZY perché se carico il corso, non voglio che si carica
+		//subito la lista degli allievi di quel corso
 		@ManyToMany(fetch = FetchType.LAZY)
 		private List<Allievo> allievi;
 		
